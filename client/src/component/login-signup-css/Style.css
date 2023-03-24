@@ -317,7 +317,10 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
     .form-group:last-child {
       margin-bottom: 0px; }
 
-    
+    .Error-Message{
+      color: rgb(245, 107, 107);
+      font-weight: bold;
+    }
   
   input {
     width: 100%;

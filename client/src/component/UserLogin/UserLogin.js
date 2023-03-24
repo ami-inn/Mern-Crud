@@ -32,7 +32,7 @@ function UserLogin() {
         });
         if (!data.error) {
           dispatch({ type: "refresh" });
-          alert('sucess')
+         
         } else {
           setErrMessage(data.message);
         }
@@ -66,10 +66,10 @@ function UserLogin() {
                                 <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" name="your_pass" id="your_pass" placeholder="Password"/>
                             </div>
                             <div className="form-group">
-                                 <label classNameName='Error-Message' htmlFor="form2Example27">
-                                {errMessage && errMessage}
-                                 </label>
-                           </div>
+                  
+                  <p className='Error-Message'> {errMessage && errMessage}</p>
+
+                    </div>
                             <div className="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" className="agree-term" />
                                 <label for="remember-me" className="label-agree-term"><span><span></span></span>Remember me</label>

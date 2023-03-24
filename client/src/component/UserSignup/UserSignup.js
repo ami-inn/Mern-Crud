@@ -43,7 +43,7 @@ function UserSignup() {
           });
           if(!data.error){
             dispatch({type:"refresh"})
-            alert('success')
+         
           }else{
             setErrMessage(data.message)
           }
@@ -86,9 +86,9 @@ function UserSignup() {
                         <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" name="pass" id="pass" placeholder="Password"/>
                     </div>
                     <div className="form-group">
-                    <label classNameName='Error-Message' htmlFor="form2Example27">
-                        {errMessage && errMessage}
-                    </label>
+                  
+                  <p className='Error-Message'> {errMessage && errMessage}</p>
+
                     </div>
                     <div className="form-group">
                         <input type="checkbox" name="agree-term" id="agree-term" className="agree-term" />

@@ -1,6 +1,6 @@
 import express from 'express'
 import multer from 'multer'
-import { checkUserLoggedIn, userLogin, userLogout, userSignup } from '../controllers/userController.js'
+import { checkUserLoggedIn, editProfile, userLogin, userLogout, userSignup } from '../controllers/userController.js'
 
 const router=express.Router()
 
@@ -25,6 +25,7 @@ const storage = multer.diskStorage({
   })
 
   router.post('/signup',userSignup)
+  router.post('/edit-profile',upload.single('file'),editProfile)
   router.post('/login',userLogin)
   router.get('/logout',userLogout)
 

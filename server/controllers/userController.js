@@ -84,6 +84,19 @@ export const userLogout = async (req, res) => {
     }).json({ message: "logged out", error: false });
 }
 
+export const editProfile = async (req, res) => {
+    try {
+        await UserModel.findByIdAndUpdate(req.body.id, {
+            $set: {
+                profile: req.file.filename
+            }
+        })
+        return res.json({ error: false })
+    }catch(err){
+        res.json({error:true, message:"Something went wrong"});
+    }
+}
+
 
 
 export const checkUserLoggedIn = async (req, res) => {
