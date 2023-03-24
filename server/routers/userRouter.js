@@ -1,6 +1,6 @@
 import express from 'express'
 import multer from 'multer'
-import { userSignup } from '../controllers/userController'
+import { userSignup } from '../controllers/userController.js'
 
 const router=express.Router()
 
@@ -21,6 +21,7 @@ const storage = multer.diskStorage({
 
 
   router.get('/',(req,res)=>{
+    res.send('hejje')
     res.json('its home')
   })
 

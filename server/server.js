@@ -4,6 +4,8 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import path from 'path'
 import dbConnect from './config/dbConnect.js'
+import userRouter from './routers/userRouter.js'
+import adminRouter from './routers/adminRouter.js'
 
 const app = express()
 
@@ -22,9 +24,11 @@ app.use(
 
 dbConnect()
 
+app.use('/',userRouter)
+app.use('/admin',adminRouter)
 
 
 
-app.listen(3333,()=>{
-    console.log('server is running http://localhost:3333')
+app.listen(5000,()=>{
+    console.log('server is running http://localhost:5000')
 })

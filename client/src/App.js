@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 
 function App() {
 
-  axios.defaults.baseURL = "http://localhost:3333/";
+  axios.defaults.baseURL = "http://localhost:5000/";
   axios.defaults.withCredentials = true;
 
   const { user,admin, refresh } = useSelector((state) => {
@@ -38,13 +38,24 @@ function App() {
   console.log(user);
 
   return (
-    <div className="App">
+
+    <Router>
+
+  <div className="App">
   
+
+    <Routes>
+      <Route path='/signup' element={<UserSignup/>} />
+    </Routes>
   
 
       
 
-    </div>
+  </div>
+
+    </Router>
+
+  
   );
 }
 

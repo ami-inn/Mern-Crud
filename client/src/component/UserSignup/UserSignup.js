@@ -38,7 +38,7 @@ function UserSignup() {
       async function handleSubmit(e) {
         e.preventDefault();
         if (!validationErr()) {
-          let {data}=await axios.post("/register", {
+          let {data}=await axios.post("/signup", {
             name, email, password, about, proffession
           });
           if(!data.error){
