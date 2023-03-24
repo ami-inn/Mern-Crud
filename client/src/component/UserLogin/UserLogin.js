@@ -3,6 +3,7 @@ import loginImg from '../../images/signin-image.jpg'
 import axios from 'axios'
 import { useDispatch } from 'react-redux';
 import { useNavigate,Link } from 'react-router-dom';
+import '../login-signup-css/Style.css'
 
 
 function UserLogin() {
@@ -45,44 +46,44 @@ function UserLogin() {
 
     <div className="main">
 
-    <section class="sign-in">
-            <div class="container">
-                <div class="signin-content">
-                    <div class="signin-image">
+    <section className="sign-in">
+            <div className="container">
+                <div className="signin-content">
+                    <div className="signin-image">
                         <figure><img src={loginImg} alt="login" /></figure>
-                        <Link to='/signup' class="signup-image-link">Create an account</Link>
+                        <Link to='/signup' className="signup-image-link">Create an account</Link>
                     </div>
 
-                    <div class="signin-form">
-                        <h2 class="form-title">Login</h2>
-                        <form onSubmit={handleSubmit} class="register-form" id="login-form">
-                            <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                    <div className="signin-form">
+                        <h2 className="form-title">Login</h2>
+                        <form onSubmit={handleSubmit} className="register-form" id="login-form">
+                            <div className="form-group">
+                                <label for="your_name"><i className="zmdi zmdi-account material-icons-name"></i></label>
                                 <input value={email} onChange={(e)=>setEmail(e.target.value)} type="text" name="your_name" id="your_name" placeholder="Your Name"/>
                             </div>
-                            <div class="form-group">
-                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <div className="form-group">
+                                <label for="your_pass"><i className="zmdi zmdi-lock"></i></label>
                                 <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" name="your_pass" id="your_pass" placeholder="Password"/>
                             </div>
-                            <div class="form-group">
-                                 <label className='Error-Message' htmlFor="form2Example27">
+                            <div className="form-group">
+                                 <label classNameName='Error-Message' htmlFor="form2Example27">
                                 {errMessage && errMessage}
                                  </label>
                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            <div className="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" className="agree-term" />
+                                <label for="remember-me" className="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
-                            <div class="form-group form-button">
-                                <input type="submit"  disabled={validationErr()} name="signin" id="signin" class="form-submit" value="Log in"/>
+                            <div className="form-group form-button">
+                                <input type="submit"  disabled={validationErr()} name="signin" id="signin" className="form-submit" value="Log in"/>
                             </div>
                         </form>
-                        <div class="social-login">
-                            <span class="social-label">Or login with</span>
-                            <ul class="socials">
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                        <div className="social-login">
+                            <span className="social-label">Or login with</span>
+                            <ul className="socials">
+                                <li><a href="#"><i className="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#"><i className="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#"><i className="display-flex-center zmdi zmdi-google"></i></a></li>
                             </ul>
                         </div>
                     </div>

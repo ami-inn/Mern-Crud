@@ -56,52 +56,52 @@ function UserSignup() {
 
     <>
 
-<div class="main">
+<div className="main">
 
       
-<section class="signup">
-    <div class="container">
-        <div class="signup-content">
-            <div class="signup-form">
-                <h2 class="form-title">Sign up</h2>
-                <form onSubmit={handleSubmit}  class="register-form" id="register-form">
-                    <div class="form-group">
-                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+<section className="signup">
+    <div className="container">
+        <div className="signup-content">
+            <div className="signup-form">
+                <h2 className="form-title">Sign up</h2>
+                <form onSubmit={handleSubmit}  className="register-form" id="register-form">
+                    <div className="form-group">
+                        <label for="name"><i className="zmdi zmdi-account material-icons-name"></i></label>
                         <input value={name} onChange={(e)=>{setName(e.target.value)}} type="text" name="name" id="name" placeholder="Your Name"/>
                     </div>
-                    <div class="form-group">
-                        <label for="email"><i class="zmdi zmdi-email"></i></label>
+                    <div className="form-group">
+                        <label for="email"><i className="zmdi zmdi-email"></i></label>
                         <input value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" name="email" id="email" placeholder="Your Email"/>
                     </div>
-                    <div class="form-group">
-                        <label for="proffession"><i class="zmdi zmdi-email"></i></label>
+                    <div className="form-group">
+                        <label for="proffession"><i className="zmdi zmdi-email"></i></label>
                         <input value={proffession} onChange={(e)=>{setProffession(e.target.value)}} type="text" name="proffession" id="proffesion" placeholder="Your Proffession"/>
                     </div>
-                    <div class="form-group">
-                        <label for="about"><i class="zmdi zmdi-email"></i></label>
+                    <div className="form-group">
+                        <label for="about"><i className="zmdi zmdi-email"></i></label>
                         <input value={about} onChange={(e)=>{setAbout(e.target.value)}} type="text" name="about" id="about" placeholder="About you "/>
                     </div>
-                    <div class="form-group">
-                        <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                    <div className="form-group">
+                        <label for="pass"><i className="zmdi zmdi-lock"></i></label>
                         <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" name="pass" id="pass" placeholder="Password"/>
                     </div>
-                    <div class="form-group">
-                    <label className='Error-Message' htmlFor="form2Example27">
+                    <div className="form-group">
+                    <label classNameName='Error-Message' htmlFor="form2Example27">
                         {errMessage && errMessage}
                     </label>
                     </div>
-                    <div class="form-group">
-                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                    <div className="form-group">
+                        <input type="checkbox" name="agree-term" id="agree-term" className="agree-term" />
+                        <label for="agree-term" className="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" className="term-service">Terms of service</a></label>
                     </div>
-                    <div class="form-group form-button">
-                        <input type="submit" disabled={validationErr()} name="signup" id="signup" class="form-submit" value="Register"/>
+                    <div className="form-group form-button">
+                        <input type="submit" disabled={validationErr()} name="signup" id="signup" className="form-submit" value="Register"/>
                     </div>
                 </form>
             </div>
-            <div class="signup-image">
+            <div className="signup-image">
                 <figure><img src={signupImg} alt="" /></figure>
-                <Link to='/login' class="signup-image-link">I am already member</Link>
+                <Link to='/login' className="signup-image-link">I am already member</Link>
             </div>
         </div>
     </div>

@@ -74,3 +74,32 @@ export async function userLogin(req, res) {
         console.log(err);
     }
 }
+
+export const userLogout = async (req, res) => {
+    res.cookie("token", "", {
+        httpOnly: true,
+        expires: new Date(0),
+        secure: true,
+        sameSite: "none",
+    }).json({ message: "logged out", error: false });
+}
+
+
+
+export const checkUserLoggedIn = async (req, res) => {
+    try {
+        const token = req.cookies.token;
+        if (!token)
+            return res.json({ loggedIn: false, error: true, message: "no token" });
+
+        const verifiedJWT = Jwt.verify(token, "myJwtsecretKey");
+        const user = await UserModel.findById(verifiedJWT.id, { password: 0 });
+        if (!user) {
+            return res.json({ loggedIn: false });
+        }
+        return res.json({ user, loggedIn: true });
+    } catch (err) {
+        console.log(err)
+        res.json({ loggedIn: false, error: err });
+    }
+}
