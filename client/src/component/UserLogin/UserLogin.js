@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux';
 import { useNavigate,Link } from 'react-router-dom';
 import '../login-signup-css/Style.css'
+import {BsFillEnvelopeFill,BsFileLock2Fill,BsGoogle,BsTwitter,BsFacebook } from "react-icons/bs";
 
 
 function UserLogin() {
@@ -58,11 +59,11 @@ function UserLogin() {
                         <h2 className="form-title">Login</h2>
                         <form onSubmit={handleSubmit} className="register-form" id="login-form">
                             <div className="form-group">
-                                <label for="your_name"><i className="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="your_name"><BsFillEnvelopeFill/></label>
                                 <input value={email} onChange={(e)=>setEmail(e.target.value)} type="text" name="your_name" id="your_name" placeholder="Your Name"/>
                             </div>
                             <div className="form-group">
-                                <label for="your_pass"><i className="zmdi zmdi-lock"></i></label>
+                                <label for="your_pass"><BsFileLock2Fill/></label>
                                 <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" name="your_pass" id="your_pass" placeholder="Password"/>
                             </div>
                             <div className="form-group">
@@ -81,9 +82,9 @@ function UserLogin() {
                         <div className="social-login">
                             <span className="social-label">Or login with</span>
                             <ul className="socials">
-                                <li><a href="#"><i className="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i className="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="#"><i className="display-flex-center zmdi zmdi-google"></i></a></li>
+                                <li><a href="#"><BsFacebook/></a></li>
+                                <li><a href="#"><BsTwitter/></a></li>
+                                <li><a href="#"><BsGoogle/></a></li>
                             </ul>
                         </div>
                     </div>

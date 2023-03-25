@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import UserLogin from "./component/UserLogin/UserLogin";
 import UserHome from "./component/UserHome/UserHome";
+import AdminLogin from "./component/AdminLogin/AdminLogin";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:5000/";
@@ -64,6 +65,13 @@ function App() {
             <Route path="/" element={<UserHome />}></Route>
           </Routes>
         )}
+
+
+        <Routes>
+          <Route path="/admin/login" element={<AdminLogin/>}  ></Route>
+        </Routes>
+
+
       </div>
     </Router>
   );

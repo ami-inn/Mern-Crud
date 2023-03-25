@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import signupImg from '../../images/signup-image.jpg'
 import '../login-signup-css/Style.css'
+import { BsFillPersonFill,BsFillEnvelopeFill,BsFillPersonLinesFill,BsPersonFillGear,BsFileLock2Fill } from "react-icons/bs";
 
 
 
@@ -66,23 +67,23 @@ function UserSignup() {
                 <h2 className="form-title">Sign up</h2>
                 <form onSubmit={handleSubmit}  className="register-form" id="register-form">
                     <div className="form-group">
-                        <label for="name"><i className="zmdi zmdi-account material-icons-name"></i></label>
+                        <label for="name"><BsFillPersonFill /></label>
                         <input value={name} onChange={(e)=>{setName(e.target.value)}} type="text" name="name" id="name" placeholder="Your Name"/>
                     </div>
                     <div className="form-group">
-                        <label for="email"><i className="zmdi zmdi-email"></i></label>
+                        <label for="email"><BsFillEnvelopeFill/></label>
                         <input value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" name="email" id="email" placeholder="Your Email"/>
                     </div>
                     <div className="form-group">
-                        <label for="proffession"><i className="zmdi zmdi-email"></i></label>
+                        <label for="proffession"><BsPersonFillGear/></label>
                         <input value={proffession} onChange={(e)=>{setProffession(e.target.value)}} type="text" name="proffession" id="proffesion" placeholder="Your Proffession"/>
                     </div>
                     <div className="form-group">
-                        <label for="about"><i className="zmdi zmdi-email"></i></label>
+                        <label for="about"><BsFillPersonLinesFill/></label>
                         <input value={about} onChange={(e)=>{setAbout(e.target.value)}} type="text" name="about" id="about" placeholder="About you "/>
                     </div>
                     <div className="form-group">
-                        <label for="pass"><i className="zmdi zmdi-lock"></i></label>
+                        <label for="pass"><BsFileLock2Fill/></label>
                         <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" name="pass" id="pass" placeholder="Password"/>
                     </div>
                     <div className="form-group">
