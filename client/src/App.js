@@ -12,12 +12,15 @@ import { useEffect } from "react";
 import UserLogin from "./component/UserLogin/UserLogin";
 import UserHome from "./component/UserHome/UserHome";
 import AdminLogin from "./component/AdminLogin/AdminLogin";
+import AdminHome from "./component/AdminHome/AdminHome";
+import CreateUser from "./component/CreateUser/CreateUser";
+import EditUser from "./component/EditUser/EditUser";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:5000/";
   axios.defaults.withCredentials = true;
 
-  const { user, refresh } = useSelector((state) => {
+  const { user, admin,refresh } = useSelector((state) => {
     return state;
   });
 
@@ -67,10 +70,35 @@ function App() {
         )}
 
 
-        <Routes>
-          <Route path="/admin/login" element={<AdminLogin/>}  ></Route>
-        </Routes>
+{
+        
+        admin.login === false &&
 
+            <Routes>
+
+                 <Route path="/admin/login" element={<AdminLogin />}></Route>
+                 <Route path="/admin/*" element={ <Navigate to="/admin/login" replace={true} />}></Route>
+              
+            </Routes>
+
+        
+        }
+
+        {
+          admin.login === true &&
+
+          <Routes>
+
+            
+          <Route path="/admin/" element={<AdminHome />}></Route>
+          <Route path="/admin/create-user" element={<CreateUser />}></Route>
+          <Route path="/admin/edit-user/:id" element={<EditUser />}></Route>
+          <Route path="/admin/*" element={ <Navigate to="/admin/" replace={true} />}></Route>
+
+
+          </Routes>
+
+        }
 
       </div>
     </Router>

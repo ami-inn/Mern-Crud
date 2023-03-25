@@ -30,7 +30,7 @@ function AdminLogin() {
           });
           if (!data.error) {
             dispatch({type:"refresh"})
-            alert('success')
+            
           } else {
             setErrMessage(data.message);
           }
@@ -38,25 +38,25 @@ function AdminLogin() {
       }
 
   return (
-  <>
+  <div className='body-admin-login'>
 
-<div class="login-card-container">
-        <div class="login-card">
-            <div class="login-card-logo">
+    <div className="login-card-container">
+        <div className="login-card">
+            <div className="login-card-logo">
                <img src={logo} alt="logo" />
             </div>
-            <div class="login-card-header">
+            <div className="login-card-header">
                 <h1>Sign In Admin</h1>
                 <div>Please login to see admin side</div>
             </div>
-            <form onSubmit={handleSubmit} class="login-card-form">
-                <div class="form-item">
+            <form onSubmit={handleSubmit} className="login-card-form">
+                <div className="form-item">
                  
                     
                     <input value={email} onChange={(e)=>{setEmail(e.target.value)}} type="text" placeholder="Enter Email" id="emailForm" 
                     autofocus required />
                 </div>
-                <div class="form-item">
+                <div className="form-item">
 
                 
                     
@@ -64,7 +64,7 @@ function AdminLogin() {
                      required />
                 </div>
 
-                <div class="form-item">
+                <div className="form-item">
 
                 <h6 style={{color:'red'}}> {errMessage && errMessage}</h6>
                
@@ -77,11 +77,11 @@ function AdminLogin() {
             </form>
            
         </div>
-        <div class="login-card-social">
+        <div className="login-card-social">
             <div>Other Sign-In Options</div>
-            <div class="login-card-social-btns">
+            <div className="login-card-social-btns">
                 <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook"
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook"
                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -89,7 +89,7 @@ function AdminLogin() {
                     </svg>
                 </a>
                 <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="24"
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-google" width="24"
                         height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -101,7 +101,7 @@ function AdminLogin() {
     </div>
   
   
-  </>
+  </div>
   )
 }
 
