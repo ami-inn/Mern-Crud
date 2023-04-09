@@ -37,8 +37,16 @@ export async function adminLogin(req, res){
 
 
 export async function getUsersList(req, res){
-    let users = await UserModel.find({admin:{$ne:true}, name:new RegExp(req.query.search, 'i')}, {password:0}).lean();
-    res.json(users)
+    try{
+        let users = await UserModel.find({admin:{$ne:true}, name:new RegExp(req.query.search, 'i')}, {password:0}).lean();
+        res.json(users)
+
+    }
+
+    catch(err){
+        console.log(err)
+    }
+  
 
 }
 

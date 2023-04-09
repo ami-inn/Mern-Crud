@@ -38,6 +38,7 @@ function App() {
       dispatch({ type: "admin", payload: { login: adminData.loggedIn } });
     })();
   }, [refresh]);
+
   console.log(user);
 
   return (
@@ -46,6 +47,7 @@ function App() {
 
         {
           user.login === false && (
+            
             <Routes>
             <Route path="/login" element={<UserLogin />} />
             <Route path="/signup" element={<UserSignup />} />
